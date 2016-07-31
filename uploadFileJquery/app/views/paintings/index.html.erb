@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Paintings</h1>
+<div id="paitings">
+    <% @paintings.each do |painting| %>
+      <div class="painting">
+        <%= image_tag painting.image_url(:thumb) if painting.image? %>
+        <div class="name"><%= painting.name %></div>
+        <div class="actions">
+          <%= link_to 'Edit', edit_painting_path(painting) %>
+          <%= link_to 'Destroy', painting, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+<%= link_to 'New Painting', new_painting_path %>
