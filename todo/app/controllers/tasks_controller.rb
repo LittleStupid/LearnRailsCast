@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    sleep 1
+    #sleep 1
     @incomplete_tasks = Task.where(complete: false)
     @complete_tasks = Task.where(complete: true)
   end
