@@ -14,4 +14,8 @@
     <% end %>
 </div>
 
-<%= link_to 'New Painting', new_painting_path %>
+<%= form_for Painting.new do |f| %>
+  <%= f.label :image, "Upload paintings:" %>
+  <%= f.file_field :image, multiple: true, name: "painting[image]", type: "file" %>
+  <%= f.submit %>
+<% end %>
